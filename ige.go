@@ -12,10 +12,15 @@ import (
 // IGE uses a two step xor process, so the first initialization vector is the
 // first half, and the second initialization vector is the second half. This
 // requires the initialization vector to be twice as long as the block size.
-var ErrInvalidIV = errors.New("initilization vector must be: b.BlockSize()*2")
+var ErrInvalidIV = errors.New("iv length must be: (block size * 2)")
 
+// IGE satisfies the cipher.BlockMode interface from the crypto/cipher package.
 type IGE interface {
+	// BlockSize returns the mode's block size.
 	BlockSize() int
+	// CryptBlocks encrypts or decrypts a number of blocks based on the
+	// underlying cipher.Block passed to NewIGEEncrypter or NewIGEDecrypter
+	// (usually from crypto/aes).
 	CryptBlocks(dst, src []byte)
 }
 
