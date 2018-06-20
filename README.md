@@ -4,6 +4,12 @@
 
 IGE block cipher mode for Go.
 
+## about
+
+<p align="center">
+    <img src="https://i.imgur.com/2xsO8VY.png" />
+</p>
+
 ## testing
 I'm using the test vectors described in the [official OpenSSL IGE paper](https://www.links.org/files/openssl-ige.pdf).
 
