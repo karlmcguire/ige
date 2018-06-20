@@ -6,13 +6,19 @@ IGE block cipher mode for Go.
 
 ## about
 
-IGE is a relatively unused block cipher mode. It can be defined by this formula:
+IGE is a block cipher mode usually used with AES. It's most notably used in Telegram's [MTProto Protocol](https://core.telegram.org/mtproto). It can be defined as the following function: `c_i = f_k(p_i ^ c_{i-1}) ^ p_{i-1}`
 
-c<sub>i</sub> = f<sub>k</sub>(m<sub>i</sub> ^ c<sub>i - 1</sub>) ^ m<sub>i - 1</sub>
+* `c_i` is ciphertext of the `i` block
+* `p_i` is plaintext of the `i` block
+* `f_k` is the block cipher function with key `k`
+
+Here is a diagram of the above function:
 
 <p align="center">
-    <img src="https://i.imgur.com/2xsO8VY.png" />
+    <img src="https://i.imgur.com/Gxztq34.png" />
 </p>
+
+Note that `iv_1` and `iv_2` in the diagram represent the initilization vectors. This implementation requires an initialization vector of two blocks. The first block is used as `iv_1`. The second half is used as `iv_2`.
 
 ## testing
 I'm using the test vectors described in the [official OpenSSL IGE paper](https://www.links.org/files/openssl-ige.pdf).
