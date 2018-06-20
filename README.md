@@ -22,7 +22,7 @@ Here is a diagram of the above function:
     <img src="https://i.imgur.com/9INS9lw.png" /> 
 </p>
 
-Note that `iv_1` and `iv_2` in the diagram represent the initilization vectors. This implementation requires an initialization vector of two blocks. The first block is used as `iv_1`. The second block is used as `iv_2`.
+Note that `c_0` and `m_0` in the diagram represent the initilization vectors. This implementation requires an initialization vector of two blocks. The first block is used as `c_0`. The second block is used as `m_0`.
 
 ## testing
 I'm using the test vectors described in the [official OpenSSL IGE paper](https://www.links.org/files/openssl-ige.pdf).
