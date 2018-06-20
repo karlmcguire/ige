@@ -29,10 +29,9 @@ func (i *igeDecrypter) CryptBlocks(dst, src []byte) {
 	b := i.block.BlockSize()
 	c := i.iv[:b]
 	m := i.iv[b:]
-	t := make([]byte, b)
 
 	for o := 0; o < len(src); o += b {
-		t = src[o : o+b]
+		t := src[o : o+b]
 
 		xor(dst[o:o+b], src[o:o+b], m)
 		i.block.Decrypt(dst[o:o+b], dst[o:o+b])
