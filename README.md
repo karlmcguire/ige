@@ -6,6 +6,10 @@ IGE block cipher mode for Go.
 
 ## about
 
+IGE is a relatively unused block cipher mode. It can be defined by this formula:
+
+c<sub>i</sub> = f<sub>k</sub>(m<sub>i</sub> ^ c<sub>i - 1</sub>) ^ m<sub>i - 1</sub>
+
 <p align="center">
     <img src="https://i.imgur.com/2xsO8VY.png" />
 </p>
