@@ -19,7 +19,7 @@ c_i = f_k(p_i ^ c_{i-1}) ^ p_{i-1}
 Here is a diagram of the above function:
 
 <p align="center">
-    <img src="https://i.imgur.com/9INS9lw.png" /> 
+    <img src="https://i.imgur.com/CpilCFB.png" />
 </p>
 
 Note that `c_0` and `m_0` in the diagram represent the initilization vectors. This implementation requires an initialization vector of two blocks. The first block is used as `c_0`. The second block is used as `m_0`.
