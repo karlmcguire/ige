@@ -4,7 +4,7 @@ import (
 	"crypto/cipher"
 )
 
-// NewIGEDecrypter returns an IGE cipher.BlockMode which encrypts using IGE and
+// NewIGEDecrypter returns an IGE cipher.BlockMode which decrypts using IGE and
 // the given cipher.Block.
 //
 // Note: iv must contain two iv values for IGE (concatenated), otherwise this
