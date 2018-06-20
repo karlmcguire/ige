@@ -4,6 +4,11 @@ import (
 	"crypto/cipher"
 )
 
+// NewIGEDecrypter returns an IGE cipher.BlockMode which decrypts using IGE and
+// the given cipher.Block.
+//
+// Note: iv must contain two iv values for IGE (concatenated), otherwise this
+// function will panic. See ErrInvalidIV for more information.
 func NewIGEEncrypter(b cipher.Block, iv []byte) IGE {
 	if err := checkIV(b, iv); err != nil {
 		panic(err.Error())
