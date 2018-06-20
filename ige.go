@@ -5,9 +5,14 @@ import (
 	"errors"
 )
 
-var (
-	ErrInvalidIV = errors.New("initilization vector must be: b.BlockSize()*2")
-)
+// ErrInvalidIV is displayed as the panic message if the initialization vector
+// passed to NewIGEEncrypter or NewIGEDecrypter doesn't fulfill the length
+// requirements for IGE.
+//
+// IGE uses a two step xor process, so the first initialization vector is the
+// first half, and the second initialization vector is the second half. This
+// requires the initialization vector to be twice as long as the block size.
+var ErrInvalidIV = errors.New("initilization vector must be: b.BlockSize()*2")
 
 type IGE interface {
 	BlockSize() int
