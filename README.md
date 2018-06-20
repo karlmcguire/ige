@@ -3,7 +3,7 @@
 [![Go Report Card](https://img.shields.io/badge/go%20report-A%2B-green.svg)](https://goreportcard.com/report/github.com/karlmcguire/ige)
 [![Coverage](https://img.shields.io/badge/coverage-100%25-ff69b4.svg)](https://gocover.io/karlmcguire/ige)
 
-IGE block cipher mode for Go
+IGE block cipher mode for Go.
 
 ## testing
 I'm using the test vectors described in the [official OpenSSL IGE paper](https://www.links.org/files/openssl-ige.pdf).
